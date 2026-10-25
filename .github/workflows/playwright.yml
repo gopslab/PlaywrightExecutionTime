@@ -25,7 +25,6 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }} --workers=5
     - name: Upload blob report to Artifacts
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: blob-report-${{ matrix.shardIndex }}
